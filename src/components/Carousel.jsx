@@ -23,7 +23,7 @@ const Carousel = () => {
         >
             <SwiperSlide>
                 <Box id="b1" sx={{ width: "100%", height: "100%" }}>
-                    <Grid sx={{ height: "100%", mx: "50px" }}>
+                    <Grid sx={{ height: "100%", mx: "50px", display: "flex", alignItems: "center" }}>
                         <Grid
                             size={6}
                             sx={{
@@ -47,8 +47,8 @@ const Carousel = () => {
                             sx={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}
 
                         >
-                            <IconButton >
-                                <PlayCircleFilledIcon size="large" />
+                            <IconButton sx={{backgroundColor: "gray"}}>
+                                <PlayCircleFilledIcon FontSize="large" />
                             </IconButton>
                         </Grid>
                     </Grid>
@@ -56,7 +56,7 @@ const Carousel = () => {
             </SwiperSlide>
             <SwiperSlide>
                 <Box id="b2" sx={{ width: "100%", height: "100%" }}>
-                    <Grid sx={{ height: "100%", mx: "50px" }}>
+                    <Grid sx={{ height: "100%", mx: "50px", display: "flex", alignItems: "center" }}>
                         <Grid
                             size={6}
                             sx={{
@@ -80,8 +80,8 @@ const Carousel = () => {
                             sx={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}
 
                         >
-                            <IconButton >
-                                <PlayCircleFilledIcon size="large" />
+                            <IconButton sx={{backgroundColor: "gray"}}>
+                                <PlayCircleFilledIcon FontSize="large" />
                             </IconButton>
                         </Grid>
                     </Grid>
@@ -89,7 +89,7 @@ const Carousel = () => {
             </SwiperSlide>
             <SwiperSlide>
                 <Box id="b3" sx={{ width: "100%", height: "100%" }}>
-                    <Grid sx={{ height: "100%", mx: "50px" }}>
+                    <Grid sx={{ height: "100%", mx: "50px", display: "flex", alignItems: "center" }}>
                         <Grid
                             size={6}
                             sx={{
@@ -113,8 +113,8 @@ const Carousel = () => {
                             sx={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}
 
                         >
-                            <IconButton >
-                                <PlayCircleFilledIcon size="large" />
+                            <IconButton sx={{backgroundColor: "gray"}}>
+                                <PlayCircleFilledIcon FontSize="large" />
                             </IconButton>
                         </Grid>
                     </Grid>
@@ -122,7 +122,7 @@ const Carousel = () => {
             </SwiperSlide>
             <SwiperSlide>
                 <Box id="b4" sx={{ width: "100%", height: "100%" }}>
-                    <Grid sx={{ height: "100%", mx: "50px" }}>
+                    <Grid sx={{ height: "100%", mx: "50px", display: "flex", alignItems: "center" }}>
                         <Grid
                             size={6}
                             sx={{
@@ -146,8 +146,8 @@ const Carousel = () => {
                             sx={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}
 
                         >
-                            <IconButton >
-                                <PlayCircleFilledIcon size="large" />
+                            <IconButton sx={{backgroundColor: "gray"}}>
+                                <PlayCircleFilledIcon FontSize="large" />
                             </IconButton>
                         </Grid>
                     </Grid>
@@ -155,7 +155,7 @@ const Carousel = () => {
             </SwiperSlide>
             <SwiperSlide>
                 <Box id="b5" sx={{ width: "100%", height: "100%" }}>
-                    <Grid sx={{ height: "100%", mx: "50px" }}>
+                    <Grid sx={{ height: "100%", mx: "50px", display: "flex", alignItems: "center" }}>
                         <Grid
                             size={6}
                             sx={{
@@ -179,8 +179,8 @@ const Carousel = () => {
                             sx={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}
 
                         >
-                            <IconButton >
-                                <PlayCircleFilledIcon size="large" />
+                            <IconButton sx={{backgroundColor: "gray"}}>
+                                <PlayCircleFilledIcon FontSize="large" />
                             </IconButton>
                         </Grid>
                     </Grid>
