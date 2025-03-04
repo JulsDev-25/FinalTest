@@ -4,6 +4,10 @@
   font-family: sans-serif;
 }
 
+body{
+  background-color: rgb(25, 25, 25);
+}
+
 #navLink {
   text-transform: "capitalize" !important;
 }
@@ -34,3 +38,6 @@
   background-size: cover;
 }
 
+h1 {
+  font-size: 60px;
+}
