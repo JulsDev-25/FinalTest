@@ -7,9 +7,7 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 
@@ -36,7 +34,7 @@ function ResponsiveAppBar() {
     };
 
     return (
-        <AppBar position="fixed" sx={{px: "30px"}}>
+        <AppBar position="fixed" sx={{px: "30px", backgroundColor: "rgb(0,0,0, 0.2)"}}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
@@ -87,7 +85,7 @@ function ResponsiveAppBar() {
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                                    <Typography id="navLink" sx={{ textAlign: 'center'}}>{page}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>

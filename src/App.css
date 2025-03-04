@@ -4,8 +4,33 @@
   font-family: sans-serif;
 }
 
+#navLink {
+  text-transform: "capitalize" !important;
+}
+
 #spanLogo {
   letter-spacing: 0;
   word-spacing: 5px;
+}
+
+#b1{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/img/banner1.jpg') center center no-repeat;
+  background-size: cover;
+}
+#b2{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/img/banner2.jpg') center center no-repeat;
+  background-size: cover;
+}
+#b3{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/img/banner3.jpg') center center no-repeat;
+  background-size: cover;
+}
+#b4{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/img/banner4.jpg') center center no-repeat;
+  background-size: cover;
+}
+#b5{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/img/banner5.jpg') center center no-repeat;
+  background-size: cover;
 }
 
