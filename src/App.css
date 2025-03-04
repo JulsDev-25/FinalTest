@@ -21,6 +21,11 @@ h2 {
   font-size: 35px;
 }
 
+h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
 #b1{
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/img/banner1.jpg') center center no-repeat;
   background-size: cover;
