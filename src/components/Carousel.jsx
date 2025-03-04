@@ -168,7 +168,7 @@ const Carousel = () => {
                                 gap: "15px"
                             }}
                         >
-                            <p style={{ color: "gray" }}>TO DO POR SOLO S/19.90 AL MES</p>
+                            <p>TO DO POR SOLO S/19.90 AL MES</p>
                             <h1>Last major séries actuel</h1>
                             <Button size="large" sx={{ mt: "15px", padding: "10px 15px", fontWeight: "bold", color: "white", background: "#f17404", textTransform: "none" }}>
                                 Contacter nous

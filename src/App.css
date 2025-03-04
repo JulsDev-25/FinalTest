@@ -2,6 +2,7 @@
   margin: 0px;
   padding: 0px;
   font-family: sans-serif;
+  color: white;
 }
 
 body{
@@ -12,9 +13,12 @@ body{
   text-transform: "capitalize" !important;
 }
 
-#spanLogo {
-  letter-spacing: 0;
-  word-spacing: 5px;
+p {
+  color: rgb(213, 213, 213);
+}
+
+h2 {
+  font-size: 35px;
 }
 
 #b1{
