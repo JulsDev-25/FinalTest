@@ -6,7 +6,7 @@ const Card = () => {
     return (
         <Box
             size={{ sx: 12, md: 3 }}
-            sx={{width: "60%" ,display: "flex", flexDirection: "column", gap:"10px", backgroundColor: "black", justifyContent: "center", alignItems: "center", textAlign: "center", p:3 }}
+            sx={{width: "60%" ,display: "flex", flexDirection: "column", gap:"10px", borderRadius: "5px", backgroundColor: "black", justifyContent: "center", alignItems: "center", textAlign: "center", p:3 }}
         >
             <IconButton sx={{ backgroundColor: "rgba(255,255,255, 0.2)", p:3}}>
                 <TvIcon fontSize="large" />

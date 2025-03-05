@@ -18,7 +18,7 @@ const Layout = () => {
 
             <Grid 
                 size={12}
-                sx={{mx:8, my:2, display: "flex", justifyContent: "center", gap: "20px"}}
+                sx={{mx:8, my:2, mb: 10, display: "flex", justifyContent: "center", gap: "20px"}}
             >
                 <Card />
                 <Card />
