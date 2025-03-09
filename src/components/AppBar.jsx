@@ -10,31 +10,37 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { ExpandMore } from '@mui/icons-material';
 
 const pages = ['Home', 'Acera', 'Centenio', "Elige Tu Pais"];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pays = ['perù', 'Agentina', 'Bolivia', 'Chille'];
 
 function ResponsiveAppBar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+    const [anchorElm, setAnchorEl] = React.useState(null)
+    const [openMenu, setOpenMenu] = React.useState(false)
+
+    const handleOpenMenu = (e) => {
+        setAnchorEl(e.target)
+        setOpenMenu(!openMenu)
+    }
+
+    const handleCloseMenu = () => {
+        setAnchorEl(null)
+        setOpenMenu(!openMenu)
+    }
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
     };
 
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
 
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
-
     return (
-        <AppBar position="fixed" sx={{px: "30px", backgroundColor: "rgb(0,0,0, 0.2)"}}>
+        <AppBar position="fixed" sx={{ px: "30px", backgroundColor: "rgb(0,0,0, 0.2)" }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
@@ -85,7 +91,7 @@ function ResponsiveAppBar() {
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography id="navLink" sx={{ textAlign: 'center'}}>{page}</Typography>
+                                    <Typography id="navLink" sx={{ textAlign: 'center' }}>{page}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -111,13 +117,36 @@ function ResponsiveAppBar() {
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: "center" }}>
                         {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                {page}
-                            </Button>
+                            page === "Elige Tu Pais" ?
+                                <Button
+                                    key={page}
+                                    onClick={handleOpenMenu}
+                                    sx={{ my: 2, color: 'white', display: 'block', display: "flex", alignItems: "center", gap: "5px" }}
+                                >
+                                    {page}
+                                    <ExpandMore fontSize="small" />
+                                    <Menu
+                                        open={openMenu}
+                                        onClose={handleCloseMenu}
+                                        anchorEl={anchorElm}
+                                        sx={{ display: "flex", flexDirection: "column"}}
+                                    >
+                                        {pays.map((pays, i) => (
+                                            <MenuItem key={i}>
+                                                <Button color="inherit ">
+                                                    {pays}
+                                                </Button>
+                                            </MenuItem>
+                                        ))}
+                                    </Menu>
+                                </Button> :
+                                <Button
+                                    key={page}
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, color: 'white', display: 'block' }}
+                                >
+                                    {page}
+                                </Button>
                         ))}
                     </Box>
                     <Box>

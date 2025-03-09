@@ -1,23 +1,22 @@
 import { Grid2 as Grid, Icon, IconButton } from '@mui/material';
-import { Box } from '@mui/system';
+import { Box, Container } from '@mui/system';
 import React from 'react';
 import image2 from '../assets/img/ab.jpg'
 import CardS4 from './CardS4';
 
-const Section4 = () => {
+const Section4 = ({children}) => {
     return (
-        <Grid
-            container
-            size={12}
-            spacing={1}
-            sx={{ gap: "30px", py: 9, px: 1, backgroundColor: "black", justifyContent: "center" }}
-        >
-                <CardS4 />
-                <CardS4 />
-                <CardS4 />
-                <CardS4 />
-        </Grid>
+        <Box sx={{ backgroundColor: "Black", width: "100%" }}>
+            <Grid
+                container
+                spacing={3}
+                sx={{ py: 9, backgroundColor: "black", mx: "auto", maxWidth: {xs: "450px",sm: "700px", md: "1010px"}, }}
+            >
+                {children}
+            </Grid>
+        </Box>
     );
+
 }
 
 export default Section4;

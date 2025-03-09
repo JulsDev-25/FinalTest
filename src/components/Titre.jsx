@@ -11,8 +11,8 @@ const Titre = ({titre, sousTitre}) => {
                 textAlign: "center",
             }}
         >
-            <p style={{textTransform: "uppercase"}}>{titre}</p>
-            <h2>{sousTitre}</h2>
+            <p style={{textTransform: "uppercase"}}>{sousTitre}</p>
+            <h2>{titre}</h2>
         </Grid>
     );
 }

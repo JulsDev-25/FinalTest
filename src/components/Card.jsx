@@ -1,19 +1,37 @@
 import { Box, Grid2 as Grid, IconButton } from '@mui/material';
 import React from 'react';
-import TvIcon from '@mui/icons-material/Tv';
 
-const Card = () => {
+const Card = ({ children, title, sousTitre, p = 3, image, ...props }) => {
+    const images = image ? image : null
+
+    console.log(image)
     return (
-        <Box
-            size={{ sx: 12, md: 3 }}
-            sx={{width: "60%" ,display: "flex", flexDirection: "column", gap:"10px", borderRadius: "5px", backgroundColor: "black", justifyContent: "center", alignItems: "center", textAlign: "center", p:3 }}
+        <Grid
+            size={1}
+            sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "10px", borderRadius: "5px",
+                backgroundColor: "black",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+                p: 3,
+                ...props
+            }}
         >
-            <IconButton sx={{ backgroundColor: "rgba(255,255,255, 0.2)", p:3}}>
-                <TvIcon fontSize="large" />
+            <IconButton sx={{ backgroundColor: "rgba(255,255,255, 0.2)", p: p }}>
+                {children}
             </IconButton>
-            <h4>Smart TV</h4>
-            <p>Disponible en todos los Smart TV de cualquier marca</p>
-        </Box>
+            <h4>{title}</h4>
+            <p>{sousTitre}</p>
+            <Box sx={{ display: "flex", justifyContent: "center", gap: "2px", flexWrap: "wrap", width: "100%" }}>
+                {images && images.map((img) => (
+                    <img src={img.url} height={50} width={50} alt="image" />
+                ))}
+            </Box>
+
+        </Grid>
     );
 }
 

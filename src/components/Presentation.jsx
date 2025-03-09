@@ -6,22 +6,22 @@ import image2 from '../assets/img/ab.jpg'
 const Presentation = () => {
     return (
         <Grid
-            sx={{display: "flex", position: "relative", gap: "30px", justifyContent: "space-between",py:9, px:5, backgroundColor: "black" }}
+            sx={{ display: { md: "flex" }, position: "relative", gap: "30px", justifyContent: "space-between", py: 9, px: { xs: 2, sm: 9, md: 6 }, backgroundColor: "black" }}
         >
             <Grid
                 size={{ xs: 12, md: 6 }}
             >
                 <Grid>
                     <p>POR QUE ELEGIRNOS</p>
-                    <h2 style={{margin: "20px 0px"}}>Obtén todas las series, películas, y canales en vivo en un solo lugar</h2>
+                    <h2 style={{ margin: "20px 0px" }}>Obtén todas las series, películas, y canales en vivo en un solo lugar</h2>
                     <p>No es necesario suscribirte a múltiples plataformas; Flix Prime ofrece la consolidación de contenido de diversas plataformas, canales premium, televisión en vivo y deportes, todo en un único lugar y a un precio imbatible.</p>
                 </Grid>
                 <Grid
-                    sx={{display: "flex"}}
+                    sx={{ display: {sx: "block", sm: "flex"}, mb: {sm: "3em", md: "auto"} }}
                 >
                     <Box>
                         <Icon />
-                        <h2>Soporte 24/7</h2>
+                        <h3>Soporte 24/7</h3>
                         <p>Contamos con atención personalizada permamentente.</p>
                     </Box>
                     <Box>
@@ -32,14 +32,20 @@ const Presentation = () => {
                 </Grid>
             </Grid>
             <Grid
-                size={{ xs: 12, md: 6}}
-                sx={{display: "flex", justifyContent: "flex-end"}}
+                size={{ xs: 12, md: 6 }}
+                sx={{ display: {xs: "none", md:"flex"}, height: { md: "400px" }, justifyContent: "flex-end" }}
             >
-                <img src={image2} style={{height: '400px', borderRadius: "20px",}} alt="ab" />
+                <img src={image2} style={{ borderRadius: "10px", height: "100%" }} alt="ab" />
             </Grid>
-            <Box sx={{ p: "40px 30px", borderRadius: "20px", backgroundColor: "#f17404", position: "absolute", marginLeft: "50%", bottom: "75px" }}>
+            <Grid
+                size={{ xs: 12, md: 6 }}
+                sx={{ display: {xs: "flex", md:"none"}, mb: "1em", height: { md: "400px" }, justifyContent: "flex-end" }}
+            >
+                <img src={image2} style={{ borderRadius: "10px", width: "100%" }} alt="ab" />
+            </Grid>
+            <Box sx={{ p: "40px 30px", borderRadius: "20px", backgroundColor: "#f17404", position: { md: "absolute" }, right: { md: "13em" }, bottom: { md: "100px" } }}>
                 <h1>S/19.<span>90</span></h1>
-                <p>POR MES (hasta 3 dispositivos)</p>
+                <p style={{ color: "white" }}>POR MES (hasta 3 dispositivos)</p>
             </Box>
         </Grid>
     );
