@@ -14,7 +14,6 @@ import { ExpandMore } from '@mui/icons-material';
 
 const pages = ['Home', 'Acera', 'Centenio', "Elige Tu Pais"];
 const pays = ['perù', 'Agentina', 'Bolivia', 'Chille'];
-
 function ResponsiveAppBar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
 
@@ -62,7 +61,25 @@ function ResponsiveAppBar() {
                         <span style={{ color: "#f17404" }}>FLIX</span><span> PRIME</span>
                     </Typography>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, alignItems: "center"}}>
+                        <Typography
+                            variant="h5"
+                            noWrap
+                            component="a"
+                            href="#app-bar-with-responsive-menu"
+                            sx={{
+                                mr: 2,
+                                display: { xs: 'flex', md: 'none' },
+                                flexGrow: 1,
+                                fontFamily: 'monospace',
+                                fontWeight: 700,
+                                letterSpacing: '.3rem',
+                                color: 'inherit',
+                                textDecoration: 'none',
+                            }}
+                        >
+                            <span style={{ color: "#f17404" }}>FLIX</span><span> PRIME</span>
+                        </Typography>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -87,41 +104,56 @@ function ResponsiveAppBar() {
                             }}
                             open={Boolean(anchorElNav)}
                             onClose={handleCloseNavMenu}
-                            sx={{ display: { xs: 'block', md: 'none' } }}
+                            sx={{ display: { xs: 'block', md: 'none', } }}
+                            slotProps={{
+                                list: {
+                                    sx: {
+                                        bgcolor: "black", // Fond du menu en noir
+                                        color: "white", // Texte blanc pour lisibilité
+                                    },
+                                },
+                            }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography id="navLink" sx={{ textAlign: 'center' }}>{page}</Typography>
-                                </MenuItem>
+                                page === pages[(pages.length - 1)] ?
+                                    <MenuItem
+                                        key={page}
+                                        onClick={handleOpenMenu}
+                                        sx={{ my: 2, color: 'white', display: 'block', display: "flex", alignItems: "center", gap: "5px", "&:hover": { color: "#f17404" }, }}
+                                    >
+                                        {page}
+                                        <ExpandMore fontSize="small" />
+                                    </MenuItem> :
+                                    <MenuItem key={page} onClick={handleCloseNavMenu}
+                                        sx={{
+                                            "&:hover": { color: "#f17404" },
+                                        }}
+                                    >
+                                        {page}
+                                    </MenuItem>
                             ))}
+                            <Box>
+                                <Button size="large" sx={{ fontWeight: "bold", color: "white", background: "#f17404", textTransform: "none" }}>
+                                    Contacter nous
+                                </Button>
+                            </Box>
                         </Menu>
                     </Box>
-                    <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-                    <Typography
-                        variant="h5"
-                        noWrap
-                        component="a"
-                        href="#app-bar-with-responsive-menu"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'flex', md: 'none' },
-                            flexGrow: 1,
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        <span style={{ color: "#f17404" }}>FLIX</span><span> PRIME</span>
-                    </Typography>
+
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: "center" }}>
                         {pages.map((page) => (
-                            page === "Elige Tu Pais" ?
+                            page === pages[(pages.length - 1)] ?
                                 <Button
                                     key={page}
                                     onClick={handleOpenMenu}
-                                    sx={{ my: 2, color: 'white', display: 'block', display: "flex", alignItems: "center", gap: "5px" }}
+                                    sx={{
+                                        my: 2, color: 'white',
+                                        display: 'block',
+                                        display: "flex",
+                                        alignItems: "center",
+                                        gap: "5px",
+                                        "&:hover": { color: "#f17404" },
+                                    }}
                                 >
                                     {page}
                                     <ExpandMore fontSize="small" />
@@ -129,10 +161,22 @@ function ResponsiveAppBar() {
                                         open={openMenu}
                                         onClose={handleCloseMenu}
                                         anchorEl={anchorElm}
-                                        sx={{ display: "flex", flexDirection: "column"}}
+                                        sx={{ display: "flex", flexDirection: "column" }}
+                                        slotProps={{
+                                            list: {
+                                                sx: {
+                                                    bgcolor: "black", // Fond du menu en noir
+                                                    color: "white", // Texte blanc pour lisibilité
+                                                },
+                                            },
+                                        }}
                                     >
                                         {pays.map((pays, i) => (
-                                            <MenuItem key={i}>
+                                            <MenuItem key={i}
+                                                sx={{
+                                                    "&:hover": { color: "#f17404" },
+                                                }}
+                                            >
                                                 <Button color="inherit ">
                                                     {pays}
                                                 </Button>
@@ -143,13 +187,13 @@ function ResponsiveAppBar() {
                                 <Button
                                     key={page}
                                     onClick={handleCloseNavMenu}
-                                    sx={{ my: 2, color: 'white', display: 'block' }}
+                                    sx={{ my: 2, color: 'white', display: 'block', "&:hover": { color: "#f17404" } }}
                                 >
                                     {page}
                                 </Button>
                         ))}
                     </Box>
-                    <Box>
+                    <Box sx={{ display: { xs: "none", sm: "flex" } }}>
                         <Button size="large" sx={{ fontWeight: "bold", color: "white", background: "#f17404", textTransform: "none" }}>
                             Contacter nous
                         </Button>

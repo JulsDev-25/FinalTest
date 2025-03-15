@@ -9,6 +9,7 @@ import Section4 from './Section4';
 import TvIcon from '@mui/icons-material/Tv';
 import TheatersIcon from '@mui/icons-material/Theaters';
 import CardS4 from './CardS4';
+import Footer from './Footer';
 
 const Layout = () => {
     const card = [
@@ -159,7 +160,7 @@ const Layout = () => {
                 {
                     card.map((item) => (
                         <Card title={item.title} sousTitre={item.sousTitre} width={wd} >
-                            <TvIcon sx={{ color: "#f17404" }} fontSize="large" />
+                            <TvIcon fontSize="large" />
                         </Card>
                     ))
                 }
@@ -230,7 +231,7 @@ const Layout = () => {
                                 }}
                             >
                                 <h3>Refiere a tus conocidos y gana meses gratis o S/.</h3>
-                                <Button size="large" variant="outlined" color="inherit" sx={{ mt: "15px", padding: "10px 15px", fontWeight: "bold", color: "white", textTransform: "none" }}>
+                                <Button size="large" variant="outlined" color="inherit" sx={{"&:hover": {backgroundColor: "#f17404", borderColor: "#f17404"}, mt: "15px", padding: "10px 15px", fontWeight: "bold", color: "white", textTransform: "none" }}>
                                     Raferir aqui
                                 </Button>
                             </Grid>
@@ -251,7 +252,7 @@ const Layout = () => {
                                 }}
                             >
                                 <h3>Postula como revendedor del servicio</h3>
-                                <Button size="large" variant="outlined" color="inherit" sx={{ mt: "15px", padding: "10px 15px", fontWeight: "bold", color: "white", textTransform: "none" }}>
+                                <Button size="large" variant="outlined" color="inherit" sx={{"&:hover": {backgroundColor: "#f17404", borderColor: "#f17404"}, mt: "15px", padding: "10px 15px", fontWeight: "bold", color: "white", textTransform: "none" }}>
                                     Saber mas
                                 </Button>
                             </Grid>
@@ -288,6 +289,12 @@ const Layout = () => {
                     </Grid>
                 </Box>
             </Section4>
+
+            <Box 
+                sx={{width: "100%"}}
+            >
+                <Footer />
+            </Box>
 
         </Grid>
     );
